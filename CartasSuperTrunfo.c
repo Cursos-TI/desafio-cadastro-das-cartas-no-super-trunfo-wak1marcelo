@@ -18,34 +18,49 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
-    char codigo_da_cidade[5] = "";
-    char cidade[20] = "";
-    int populacao_da_cidade;
-    float area_da_cidade;
-    int qtade_pontos_turisticos;
-    
-    // Mensagem de boas vindas ao jogo
-    printf("Bem-vindo ao jogo super trunfo!!\n");
-    printf("Faça o cadastro das cartas do jogo\n");
-    
-    // Cadastro dos dados das cartas
-    printf("\nDigite o codigo da cidade: (EX: A01, A02, B01 ....)");
-    scanf("%s", &codigo_da_cidade[0]);
-    printf("Digite o nome da cidade: ");
-    scanf("%s", &cidade[0]);
-    printf("Digite a populacao da cidade: ");
-    scanf("%d", &populacao_da_cidade);
-    printf("Digite a area da cidade: ");
-    scanf("%f", &area_da_cidade);
-    printf("Digite o total de pontos turisticos da cidade: ");
-    scanf("%d", &qtade_pontos_turisticos);
+  char estado[20];
+  char codigo_da_cidade[5];
+  char cidade[20];
+  int populacao_da_cidade;
+  float area_da_cidade;
+  int qtade_pontos_turisticos;
+  float densidade_popu;
+  float pib;
+  float pib_perCapita;
 
-    // Exibicao dos dados armazenados acima
-    printf("\nCodigo da cidade: %s", codigo_da_cidade);
-    printf("\nNome da cidade: %s", cidade);
-    printf("\nPopulacao da cidade: %d", populacao_da_cidade);
-    printf("\nArea da cidade: %f", area_da_cidade);
-    printf("\nQuantidade de pontos turisticos da cidade: %d", qtade_pontos_turisticos);
+  // Mensagem de boas vindas ao jogo
+  printf("Bem-vindo ao jogo super trunfo!!\n");
+  printf("Faça o cadastro das cartas do jogo\n");
 
-    return 0;
+  // Cadastro dos dados das cartas
+  printf("\nDigite o estado da cidade: ");
+  scanf("%s", &estado[0]);
+  printf("\nDigite o codigo da cidade: (EX: A01, A02, B01 ....)");
+  scanf("%s", &codigo_da_cidade[0]);
+  printf("Digite o nome da cidade: ");
+  scanf("%s", &cidade[0]);
+  printf("Digite a populacao da cidade: ");
+  scanf("%d", &populacao_da_cidade);
+  printf("Digite a area da cidade: ");
+  scanf("%f", &area_da_cidade);
+  printf("Digite o total de pontos turisticos da cidade: ");
+  scanf("%d", &qtade_pontos_turisticos);
+  printf("\nDigite o PIB da cidade: ");
+  scanf("%f", &pib);
+
+  // Calculo da densidade populacional e pib-per-capita
+  densidade_popu = (float)populacao_da_cidade / area_da_cidade;
+  pib_perCapita = (float)pib / populacao_da_cidade;
+
+  // Exibicao dos dados armazenados acima
+  printf("\nO estado: %s", estado);
+  printf("\nCodigo da cidade: %s", codigo_da_cidade);
+  printf("\nNome da cidade: %s", cidade);
+  printf("\nPopulacao da cidade: %d", populacao_da_cidade);
+  printf("\nArea da cidade: %f", area_da_cidade);
+  printf("\nQuantidade de pontos turisticos da cidade: %d", qtade_pontos_turisticos);
+  printf("\nA densidade populacional desta cidade e: %.4f", densidade_popu);
+  printf("\nO PIB per capita e: %.4f", pib_perCapita);
+
+  return 0;
 }
